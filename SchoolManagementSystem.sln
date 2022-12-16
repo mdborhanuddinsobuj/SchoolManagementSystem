@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMS.Web", "SMS.Web\SMS.Web.csproj", "{8C0C26F7-972C-44E5-B085-08B00DCE1175}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMS.Core", "SMS.Core\SMS.Core.csproj", "{BFBE9642-D0D6-4BC0-B36A-E6A4D6902C57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMS.Data", "SMS.Data\SMS.Data.csproj", "{1F1C5CED-D487-4446-853A-425841552A24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C0C26F7-972C-44E5-B085-08B00DCE1175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C0C26F7-972C-44E5-B085-08B00DCE1175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C0C26F7-972C-44E5-B085-08B00DCE1175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C0C26F7-972C-44E5-B085-08B00DCE1175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFBE9642-D0D6-4BC0-B36A-E6A4D6902C57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFBE9642-D0D6-4BC0-B36A-E6A4D6902C57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFBE9642-D0D6-4BC0-B36A-E6A4D6902C57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFBE9642-D0D6-4BC0-B36A-E6A4D6902C57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F1C5CED-D487-4446-853A-425841552A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F1C5CED-D487-4446-853A-425841552A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F1C5CED-D487-4446-853A-425841552A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F1C5CED-D487-4446-853A-425841552A24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40619849-A716-4431-98CB-17E8A18728B8}
+	EndGlobalSection
+EndGlobal

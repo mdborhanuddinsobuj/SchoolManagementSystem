@@ -1,0 +1,58 @@
+﻿@using SMS.Core
+@{
+    ViewData["Title"] = "Index";
+    int i = 1;
+}
+<div class="col-md-12">
+<div class="row">
+    
+        <div class="col-md-6">
+            <h2>Section List</h2>
+            @*<div class="text-right">
+                <a href="@Url.Action("Create", "Section")" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span>Add New</a>
+            </div>*@
+            <table class="table table-bordered table-striped table-sm">
+                <thead class="bg-success">
+                    <tr>
+                        <th>#</th>
+                        <th>SectionName</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var c in Model)
+                    {
+                        <tr>
+                            <td>@i</td>
+                            <td>@c.SectionName</td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@c.Id"><i class="bi bi-pencil-fill"></i>&nbsp;&nbsp;&nbsp;</a>
+                                <a asp-action="Delete" asp-route-id="@c.Id"><i class="bi bi-archive-fill"></i></a>
+                            </td>
+                        </tr>
+                        i++;
+                    }
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <div class="col-6 my-5">
+        @using (Html.BeginForm("Create", "Section", FormMethod.Post))
+        {
+
+                <div class="form-group row">
+                <label class="col-form-label col-2">SectionName</label>
+                <div class="col-6">
+                    <input type="text" name="SectionName" class="form-control" autocomplete="off"/>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-10 offset-2">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        }
+    </div>
+    </div>
+</div>
+
