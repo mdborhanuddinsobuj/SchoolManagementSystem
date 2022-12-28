@@ -26,6 +26,58 @@ namespace SMS.Web.Controllers
             ViewBag.section = _section.GetAllSectionModelForDropDown();
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(ClassInfoModel classInfo)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (_classInfo.AlreadyExist(classInfo.ClassName, classInfo.Id))
+                    {
+                        return RedirectToAction(nameof(Index));
+                    }
+                    _classInfo.Insert(classInfo);
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        public IActionResult Edit(int id)
+        {
+            ViewBag.section = _section.GetAllSectionModelForDropDown();
+            return View(_classInfo.Find(id));
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(ClassInfoModel classInfo)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (_classInfo.AlreadyExist(classInfo.ClassName, classInfo.Id))
+                    {
+                        return RedirectToAction(nameof(Index));
+                    }
+                    _classInfo.Update(classInfo,classInfo.Id);
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        public IActionResult Delete(int id)
+        {
+            ViewBag.section = _section.GetAllSectionModelForDropDown();
+            return View(_classInfo.Find(id));
+        }
         
     }
 }

@@ -1,4 +1,5 @@
-﻿using SMS.Core.Interface;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using SMS.Core.Interface;
 using SMS.Core.Models;
 using SMS.Core.Repository.Base;
 using SMS.Data.SMSDbContext;
@@ -6,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Web.Mvc;
+//using System.Web.Mvc;
 
 namespace SMS.Data.Repository
 {
