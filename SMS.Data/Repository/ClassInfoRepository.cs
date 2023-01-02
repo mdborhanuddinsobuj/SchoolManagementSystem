@@ -1,4 +1,5 @@
-﻿using SMS.Core.Interface;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using SMS.Core.Interface;
 using SMS.Core.Models;
 using SMS.Core.Repository.Base;
 using SMS.Data.SMSDbContext;
@@ -29,6 +30,15 @@ namespace SMS.Data.Repository
                 var clssinfo = All().FirstOrDefault(x => x.ClassName == name);
                 return clssinfo != null;
             }
+        }
+
+        public IEnumerable<SelectListItem> GetAllClassInfoModelForDropDown()
+        {
+            return All().Select(x => new SelectListItem
+            {
+                Text = x.ClassName.ToString(),
+                Value = x.Id.ToString()
+            });
         }
     }
 }
