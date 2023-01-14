@@ -22,6 +22,10 @@
     <ProjectReference Include="..\SMS.Core\SMS.Core.csproj" />
     <ProjectReference Include="..\SMS.Data\SMS.Data.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\StudentPic\" />
+  </ItemGroup>
   
 
 </Project>

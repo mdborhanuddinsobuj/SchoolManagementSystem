@@ -1,0 +1,72 @@
+﻿@model IEnumerable<SMS.Core.Models.AdmissionModel>
+
+@{
+    ViewData["Title"] = "Index";
+    int i = 1;
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-bordered table-striped table-sm">
+    <thead class="bg-success">
+        <tr>
+            <th>
+                Sl
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentPicture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentGender)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.classInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Section)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@i</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentId)
+            </td>
+            <td>
+                <img src="@item.StudentPicture" height="50px" width="50px">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.classInfo.ClassName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Section.SectionName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+        i++;
+}
+    </tbody>
+</table>

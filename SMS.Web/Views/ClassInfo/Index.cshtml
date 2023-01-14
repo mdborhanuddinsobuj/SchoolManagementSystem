@@ -17,7 +17,6 @@
                     <tr>
                         <th>#</th>
                         <th>@Html.DisplayNameFor(x=>x.ClassName)</th>
-                        <th>@Html.DisplayNameFor(x=>x.SectionModel.SectionName)</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -27,7 +26,6 @@
                         <tr>
                             <td>@i</td>
                             <td>@Html.DisplayFor(x=>c.ClassName)</td>
-                            <td>@Html.DisplayFor(x=>c.SectionModel.SectionName)</td>
                             <td>
                                 <a asp-action="Edit" asp-route-id="@c.Id"><i class="bi bi-pencil-fill"></i>&nbsp;&nbsp;&nbsp;</a>
                                 <a asp-action="Delete" asp-route-id="@c.Id"><i class="bi bi-archive-fill"></i></a>

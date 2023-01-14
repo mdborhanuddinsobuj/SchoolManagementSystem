@@ -10,13 +10,9 @@ namespace SMS.Core.Models
     {
         public ClassInfoModel()
         {
-            //this.Admissions=new List<Admission>();
         }
         public string ClassName { get; set; }
-
-        [ForeignKey("SectionModel")]
-        public int SectionId { get; set; }
-        public virtual SectionModel SectionModel { get; set; }
-        public virtual ICollection<Admission> Admissions { get;set; }
+        public virtual ICollection<AdmissionModel> Admissions { get; set; }
+        public virtual ICollection<ResultModel> Results { get; set; }
     }
 }

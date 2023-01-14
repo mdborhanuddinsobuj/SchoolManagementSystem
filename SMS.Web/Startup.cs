@@ -30,6 +30,8 @@ namespace SMS.Web
             services.AddDbContext<PDbContext>(op => op.UseSqlServer(this.Configuration.GetConnectionString("con")));
             services.AddTransient<ISectionRepository, SectionRepository>();
             services.AddTransient<IClassInfoRepository, ClassInfoRepository>();
+            services.AddTransient<IAdmissionRepository, AdmissionRepository>();
+            services.AddTransient<IResultRepository,ResultRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

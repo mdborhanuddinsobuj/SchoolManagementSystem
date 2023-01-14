@@ -17,11 +17,6 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ClassName)
         </dd>
-        <div class="form-group col-6">
-            <label class="control-label" asp-for="SectionId"></label>
-            <select asp-for="SectionId" asp-items="ViewBag.section">
-            </select>
-        </div>
     </dl>
     
     <form asp-action="Delete">

@@ -7,9 +7,9 @@ using System.Text;
 
 namespace SMS.Core.Interface
 {
-    public interface IAdmissionRepository:IBaseRepository<AdmissionModel>
+    public interface IResultRepository:IBaseRepository<ResultModel>
     {
-        bool AllReadyExist(string studentId, int admissionId);
-        IEnumerable<SelectListItem> GetAllAdmissionForDropDown();
+        bool AllReadyexist(string studentId,int id);
+        IEnumerable<SelectListItem> GetAllResultsForDropDown();
     }
 }

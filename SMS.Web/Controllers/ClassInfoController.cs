@@ -9,21 +9,18 @@ namespace SMS.Web.Controllers
     public class ClassInfoController : Controller
     {
         private readonly IClassInfoRepository _classInfo;
-        private readonly ISectionRepository _section;
 
-        public ClassInfoController(IClassInfoRepository classInfo, ISectionRepository section)
+        public ClassInfoController(IClassInfoRepository classInfo)
         {
             _classInfo = classInfo;
-            _section = section;
         }
 
         public IActionResult Index()
         {
-            return View(_classInfo.All().Include(x=>x.SectionModel));
+            return View(_classInfo.All());
         }
         public IActionResult Create()
         {
-            ViewBag.section = _section.GetAllSectionModelForDropDown();
             return View();
         }
         [HttpPost]
@@ -49,7 +46,6 @@ namespace SMS.Web.Controllers
         }
         public IActionResult Edit(int id)
         {
-            ViewBag.section = _section.GetAllSectionModelForDropDown();
             return View(_classInfo.Find(id));
         }
         [HttpPost]
@@ -75,7 +71,6 @@ namespace SMS.Web.Controllers
         }
         public IActionResult Delete(int id)
         {
-            ViewBag.section = _section.GetAllSectionModelForDropDown();
             return View(_classInfo.Find(id));
         }
         
