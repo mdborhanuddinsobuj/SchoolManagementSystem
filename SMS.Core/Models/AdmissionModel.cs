@@ -51,6 +51,9 @@ namespace SMS.Core.Models
         public int SectionId { get; set; }
         public SectionModel Section { get; set; }
         public virtual ICollection<ResultModel> Results { get; set; }
+        public virtual ICollection<AdmissionFeeModel> AdmissionFees { get; set; }
+        public virtual ICollection<MonthlyFeeModel> MonthlyFees { get; set; }
+        public virtual ICollection<StudentTransfer> StudentTransfers { get; set; }
     }
     public enum Gender
     {

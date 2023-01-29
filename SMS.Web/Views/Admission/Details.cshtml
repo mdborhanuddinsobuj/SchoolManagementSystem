@@ -10,114 +10,150 @@
     <h4>AdmissionModel</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Joining)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Joining)
-        </dd>
-        <dt class = "col-sm-2">
+        <div class="col-6 mb-2">
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.Joining)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Joining)
+            </dd>
+        </div>
+        <div class="col-6 mb-2">
+            <dt class = "col-sm-6">
             @Html.DisplayNameFor(model => model.StudentId)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-6">
             @Html.DisplayFor(model => model.StudentId)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StudentPicture)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StudentPicture)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StudentName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StudentName)
-        </dd>
-        <dt class = "col-sm-2">
+        </div>
+        <div class="col-6 mb-2">
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.StudentPicture)
+            </dt>
+            <dd class="col-sm-6">
+                <img src="@Model.StudentPicture" style="height:50px;width:50px;"/>
+            </dd>
+        </div>
+        <div class="col-6 mb-2">
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.StudentName)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.StudentName)
+            </dd>
+        </div>
+        <div class="col-6 mb-2">
+            <dt class="col-sm-6">
             @Html.DisplayNameFor(model => model.StudentDOB)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-6">
             @Html.DisplayFor(model => model.StudentDOB)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FatherName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FatherName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FatherOccupation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FatherOccupation)
-        </dd>
-        <dt class = "col-sm-2">
+        </div>
+        <div class="col-6 mb-2">
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.FatherName)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.FatherName)
+            </dd>
+        </div>
+        <div class="col-6 mb-2">
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.FatherOccupation)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.FatherOccupation)
+            </dd>
+        </div>
+        <div class="col-6 mb-2">
+            <dt class = "col-sm-6">
             @Html.DisplayNameFor(model => model.FatherPhoneNumber)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-6">
             @Html.DisplayFor(model => model.FatherPhoneNumber)
         </dd>
-        <dt class = "col-sm-2">
+        </div>
+        <div class="col-6 mb-2">
+        <dt class = "col-sm-6">
             @Html.DisplayNameFor(model => model.MotherName)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-6">
             @Html.DisplayFor(model => model.MotherName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MotherOccupation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MotherOccupation)
-        </dd>
-        <dt class = "col-sm-2">
+            </dd>
+            </div>
+        <div class="col-6 mb-2">
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.MotherOccupation)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.MotherOccupation)
+            </dd>
+        </div>
+        <div class="col-6 mb-2">
+            <dt class = "col-sm-6">
             @Html.DisplayNameFor(model => model.MotherPhoneNumber)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-6">
             @Html.DisplayFor(model => model.MotherPhoneNumber)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StudentGender)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StudentGender)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.studentAddress)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.studentAddress)
-        </dd>
-        <dt class = "col-sm-2">
+            </dd>
+            </div>
+        <div class="col-6 mb-2">
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.StudentGender)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.StudentGender)
+            </dd>
+        </div>
+        <div class="col-6 mb-2">
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.studentAddress)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.studentAddress)
+            </dd>
+        </div>
+        <div class="col-6 mb-2">
+            <dt class = "col-sm-6">
             @Html.DisplayNameFor(model => model.StudentPhone)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-6">
             @Html.DisplayFor(model => model.StudentPhone)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MobileNumber)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MobileNumber)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NameOfLastStudying)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NameOfLastStudying)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.classInfo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.classInfo.ClassName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Section)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Section.SectionName)
-        </dd>
+            </dd>
+            </div>
+        <div class="col-6 mb-2">
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.MobileNumber)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.MobileNumber)
+            </dd>
+        </div>
+        <div class="col-6 mb-2">
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.NameOfLastStudying)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.NameOfLastStudying)
+            </dd>
+        </div>
+        <div class="col-6 mb-2">
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.classInfo)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.classInfo.ClassName)
+            </dd>
+        </div>
+        <div class="col-6 mb-2">
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.Section)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Section.SectionName)
+            </dd>
+        </div>
     </dl>
 </div>
 <div>

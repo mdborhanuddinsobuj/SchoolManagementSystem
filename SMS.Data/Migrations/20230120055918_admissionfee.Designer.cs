@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SMS.Data.SMSDbContext;
 
 namespace SMS.Data.Migrations
 {
     [DbContext(typeof(PDbContext))]
-    partial class PDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230120055918_admissionfee")]
+    partial class admissionfee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -185,60 +187,6 @@ namespace SMS.Data.Migrations
                     b.ToTable("ClassInfoModels");
                 });
 
-            modelBuilder.Entity("SMS.Core.Models.MonthlyFeeModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AdmissionId")
-                        .HasColumnType("int");
-
-                    b.Property<double>("AmountInTaka")
-                        .HasColumnType("float");
-
-                    b.Property<int>("ClassId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ClassInfoId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("FeeDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Payment")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PaymentDetails")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("sectionId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AdmissionId");
-
-                    b.HasIndex("ClassInfoId");
-
-                    b.HasIndex("sectionId");
-
-                    b.ToTable("MonthlyFeeModels");
-                });
-
             modelBuilder.Entity("SMS.Core.Models.ResultModel", b =>
                 {
                     b.Property<int>("Id")
@@ -303,45 +251,6 @@ namespace SMS.Data.Migrations
                     b.ToTable("SectionModels");
                 });
 
-            modelBuilder.Entity("SMS.Core.Models.StudentTransfer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AdmissionId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ClassInfoId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("SectionId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TransferInstitute")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AdmissionId");
-
-                    b.HasIndex("ClassInfoId");
-
-                    b.HasIndex("SectionId");
-
-                    b.ToTable("StudentTransfers");
-                });
-
             modelBuilder.Entity("SMS.Core.Models.AdmissionFeeModel", b =>
                 {
                     b.HasOne("SMS.Core.Models.AdmissionModel", "Admission")
@@ -376,25 +285,6 @@ namespace SMS.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("SMS.Core.Models.MonthlyFeeModel", b =>
-                {
-                    b.HasOne("SMS.Core.Models.AdmissionModel", "Admission")
-                        .WithMany("MonthlyFees")
-                        .HasForeignKey("AdmissionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SMS.Core.Models.ClassInfoModel", "ClassInfo")
-                        .WithMany("MonthlyFees")
-                        .HasForeignKey("ClassInfoId");
-
-                    b.HasOne("SMS.Core.Models.SectionModel", "Section")
-                        .WithMany("MonthlyFees")
-                        .HasForeignKey("sectionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("SMS.Core.Models.ResultModel", b =>
                 {
                     b.HasOne("SMS.Core.Models.AdmissionModel", "Admission")
@@ -411,27 +301,6 @@ namespace SMS.Data.Migrations
 
                     b.HasOne("SMS.Core.Models.SectionModel", "Section")
                         .WithMany("Results")
-                        .HasForeignKey("SectionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("SMS.Core.Models.StudentTransfer", b =>
-                {
-                    b.HasOne("SMS.Core.Models.AdmissionModel", "Admission")
-                        .WithMany("StudentTransfers")
-                        .HasForeignKey("AdmissionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SMS.Core.Models.ClassInfoModel", "ClassInfo")
-                        .WithMany("StudentTransfers")
-                        .HasForeignKey("ClassInfoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SMS.Core.Models.SectionModel", "Section")
-                        .WithMany("StudentTransfers")
                         .HasForeignKey("SectionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

@@ -35,17 +35,88 @@ namespace SMS.Web.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(ResultModel result)
+        public IActionResult Create(ResultModel resultModel)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    if (_result.AllReadyexist(result.Admission.StudentId,result.Id))
-                    {
-                        return RedirectToAction("Index");
-                    }
-                    _result.Insert(result);
+                    _result.Insert(resultModel);
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View(resultModel);
+            }
+        }
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            ViewBag.Admission = _admission.GetAllAdmissionForDropDown();
+            ViewBag.ClassInfo = _classInfo.GetAllClassInfoModelForDropDown();
+            ViewBag.Section = _section.GetAllSectionModelForDropDown();
+            return View(_result.Find(id));
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(ResultModel resultModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _result.Update(resultModel,resultModel.Id);
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View(resultModel);
+            }
+        }
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            ViewBag.Admission = _admission.GetAllAdmissionForDropDown();
+            ViewBag.ClassInfo = _classInfo.GetAllClassInfoModelForDropDown();
+            ViewBag.Section = _section.GetAllSectionModelForDropDown();
+            return View(_result.Find(id));
+        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public IActionResult Details(ResultModel result)
+        //{
+        //    try
+        //    {
+        //        if (ModelState.IsValid)
+        //        {
+        //            _result.All();
+        //        }
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    catch
+        //    {
+        //        return View(result);
+        //    }
+        //}
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            ViewBag.Admission = _admission.GetAllAdmissionForDropDown();
+            ViewBag.ClassInfo = _classInfo.GetAllClassInfoModelForDropDown();
+            ViewBag.Section = _section.GetAllSectionModelForDropDown();
+            return View(_result.Find(id));
+        }
+        [HttpPost]
+        public IActionResult Delete(ResultModel result)
+        {
+            try
+            {
+                var res = _result.Find(result.Id);
+                if (res!=null)
+                {
+                    _result.Delete(res);
                 }
                 return RedirectToAction(nameof(Index));
             }

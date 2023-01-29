@@ -16,6 +16,9 @@ namespace SMS.Data.SMSDbContext
         public DbSet<SectionModel> SectionModels { get; set; }
         public DbSet<AdmissionModel> AdmissionModels { get; set; }
         public DbSet<ResultModel> ResultModels { get; set; }
+        public DbSet<AdmissionFeeModel> admissionFeeModels { get; set; }
+        public DbSet<MonthlyFeeModel> MonthlyFeeModels { get; set; }
+        public DbSet<StudentTransfer> StudentTransfers { get; set; }
 
         
     }

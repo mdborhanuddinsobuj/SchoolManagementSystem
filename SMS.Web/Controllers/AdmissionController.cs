@@ -92,7 +92,7 @@ namespace SMS.Web.Controllers
                     }
                     _admission.Update(admission,admission.Id);
                 }
-
+                
                 return RedirectToAction(nameof(Index));
 
             }
@@ -104,8 +104,8 @@ namespace SMS.Web.Controllers
         [HttpGet]
         public IActionResult Details(int id)
         {
-            //ViewBag.ClassInfo = _classInfo.GetAllClassInfoModelForDropDown();
-            //ViewBag.Section = _section.GetAllSectionModelForDropDown();
+            ViewBag.ClassInfo = _classInfo.GetAllClassInfoModelForDropDown();
+            ViewBag.Section = _section.GetAllSectionModelForDropDown();
             return View(_admission.Find(id));
         }
         [HttpGet]

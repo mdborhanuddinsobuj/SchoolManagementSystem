@@ -32,6 +32,8 @@ namespace SMS.Web
             services.AddTransient<IClassInfoRepository, ClassInfoRepository>();
             services.AddTransient<IAdmissionRepository, AdmissionRepository>();
             services.AddTransient<IResultRepository,ResultRepository>();
+            services.AddTransient<IAdmissionFeeRepository, AdmissionFeeRepository>();
+            services.AddTransient<IMonthlyFeeRepository, MonthlyFeeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -14,5 +14,8 @@ namespace SMS.Core.Models
         public string ClassName { get; set; }
         public virtual ICollection<AdmissionModel> Admissions { get; set; }
         public virtual ICollection<ResultModel> Results { get; set; }
+        public virtual ICollection<AdmissionFeeModel> AdmissionFees { get; set; }
+        public virtual ICollection<MonthlyFeeModel> MonthlyFees { get; set; }
+        public virtual ICollection<StudentTransfer> StudentTransfers { get; set; }
     }
 }
